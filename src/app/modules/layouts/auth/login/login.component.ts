@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { UserService } from '../../../../shared/services/user.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
     password: ['',Validators.required]
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -22,5 +23,6 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     if (!this.loginForm.valid)       
       return;
-  }
+      this.userService.login(this.loginForm.value.email, this.loginForm.value.password)
+    }
 }
