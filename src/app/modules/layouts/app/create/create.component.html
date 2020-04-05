@@ -1,0 +1,9 @@
+<div id="form">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+        <label><span>Name activity</span><input type="text" name="name" formControlName="name"></label>
+        <label><span>Site</span><input type="text" name="site" formControlName="site"></label>
+        <label><span>Date</span><input type="date" name="date" formControlName="date"></label>
+        <label><span>Difficulty</span><input type="text" name="difficulty" formControlName="difficulty"></label>
+        <label><button type="submit" [disabled]="!createForm.valid">Create Activity</button></label>
+    </form>
+</div>

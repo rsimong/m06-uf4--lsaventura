@@ -80,3 +80,6 @@ La puntuación se dividirá de la siguiente forma:
   - (``1p``) \*Calidad del código y separación de código en servicios, componentes, etc.
   
 Los apartados marcados con un \* no se contarán a menos que se obtenga un mínimo de 5 en los demás puntos.
+
+### inspiracions pagines 
+https://dribbble.com/shots/7128143-Booking-platform-for-scuba-diving-industry
