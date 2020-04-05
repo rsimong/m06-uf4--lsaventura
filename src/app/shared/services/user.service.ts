@@ -15,8 +15,9 @@ export class UserService {
   login(email: string, password: string) {
     this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
-      .then((value) => {
-        console.log("logged");
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("user",JSON.stringify(response.user.providerData))
       })
       .catch((err) => {
         console.log("error:" + err);
