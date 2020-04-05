@@ -1,7 +1,5 @@
 import { Injectable } from "@angular/core";
-import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFirestore } from 'angularfire2/firestore';
-import * as firebase from "firebase/app";
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -10,15 +8,21 @@ import { Observable } from "rxjs";
 export class ActivityService {
 
   constructor(private db: AngularFirestore) {
-  
   }
 
-  create(data){
+  list(): Observable<any> {
+    return this.db.collection('activities').snapshotChanges();
+  }
+
+  create(data: any): Promise<any> {
     return this.db.collection('activities').add(data);
   }
 
-  list():Observable<any>{
-    return this.db.collection('activities').snapshotChanges();
-    
+  update(docId: string, data: any): Promise<any> {
+    return this.db.collection('activities').doc(docId).set(data);
+  }
+
+  delete(docId: string): Promise<any> {
+    return this.db.collection('activities').doc(docId).delete();
   }
 }
