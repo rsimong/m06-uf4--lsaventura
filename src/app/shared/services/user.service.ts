@@ -26,4 +26,10 @@ export class UserService {
   logout() {
     this.afAuth.auth.signOut();
   }
+
+  create(name: string, site: string, date: Date, difficulty: string ){
+
+    
+
+  }
 }

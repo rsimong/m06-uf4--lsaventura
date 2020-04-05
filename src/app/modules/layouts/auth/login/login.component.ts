@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     if (!this.loginForm.valid)       
       return;
+    
       this.userService.login(this.loginForm.value.email, this.loginForm.value.password)
-    }
+  }
 }
