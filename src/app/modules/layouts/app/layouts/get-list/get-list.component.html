@@ -1,13 +1,28 @@
-<ul>
-  <li *ngFor="let activity of activities">
-    {{ activity?.data?.name }}
-    <button type="button" (click)="updateDoc(activity?.id)">Update</button>
-    <button type="button" (click)="deleteDoc(activity?.id)">Delete</button>
-  </li>
-</ul>
+<div id="container">
+  <!-- <table>
+    <tr>
+      <th>Name</th>
+      <th>Site</th>
+      <th>Date</th>
+      <th>Difficulty</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    <tr> -->
+  <ul>
+    <li *ngFor="let activity of activities">
+      {{ activity?.data?.name }}
+      <button type="button" (click)="updateDoc(activity?.id)">Update</button>
+      <button type="button" (click)="deleteDoc(activity?.id)">Delete</button>
+    </li>
+  </ul>
+<!-- </tr>
+</table> -->
+  <button type="button" (click)="createNewActivity()">Create Activity</button>
 
-<button type="button" (click)="createNewActivity()">Create Activity</button>
+  <ng-container *ngIf="showPopupDelete.isOpen">
+    <app-delete-activity [docId]="showPopupDelete.docId" (notifyResult)="closePopupDelete($event)"></app-delete-activity>
+  </ng-container>
 
-<ng-container *ngIf="showPopupDelete.isOpen">
-  <app-delete-activity [docId]="showPopupDelete.docId" (notifyResult)="closePopupDelete($event)"></app-delete-activity>
-</ng-container>
+
+</div>
