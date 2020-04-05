@@ -1,0 +1,21 @@
+<div>
+  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" formControlName="name" />
+    </label>
+    <label>
+      <span>Site</span>
+      <input type="text" name="name" formControlName="site" />
+    </label>
+    <label>
+      <span>Date</span>
+      <input type="text" name="name" formControlName="date" />
+    </label>
+    <label>
+      <span>Difficulty</span>
+      <input type="text" name="name" formControlName="difficulty" />
+    </label>
+    <button type="submit">Update Activity</button>
+  </form>
+</div>

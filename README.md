@@ -74,7 +74,7 @@ La puntuación se dividirá de la siguiente forma:
   - (``1p``) \*Calidad del código y separación de código en servicios, componentes, etc.
 - Puntuación del desarrollador 2:
   - (``2,5p``)Actualización (más el guard CanDeactivate) y eliminación de actividades.
-  - (``1p``) Creación del módulo de actividadesy sus rutas (incluida la ruta del formulario de creación).
+  - (``1p``) Creación del módulo de actividades y sus rutas (incluida la ruta del formulario de creación).
   - (``1p``) Ruta 404, modelo de actividad.
   - (``1,5p``) Seguimiento semanal (``0,5`` cada seguimiento días: 21 o 23, 28 o 30, y 5 o 7).
   - (``1p``) \*Calidad del código y separación de código en servicios, componentes, etc.
