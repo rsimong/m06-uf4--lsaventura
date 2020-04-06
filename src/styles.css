@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  /* color: #222; */
+  color: #373d52;
+  box-sizing: border-box;
+  position: relative;
+}
+
+*:hover,
+*:focus {
+  outline: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+body {
+  background-color: white;
+  position: absolute;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+strong {
+  font-weight: 500;
+}
