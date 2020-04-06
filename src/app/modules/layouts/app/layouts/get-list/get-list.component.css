@@ -2,4 +2,116 @@
   width: 100%;
   height: 100%;
   background-color: #eef0f3;
+  padding:20px;
+}
+
+#container-header{
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#container-header > h1{
+    font-weight: 700;
+    font-size: 25px;
+    color:black;
+    
+}
+
+.table{
+    height:100%;
+    padding: 20px;
+    width: auto;
+    background-color:white;
+    border-radius: 10px;
+}
+
+
+
+.table > .thead{
+    padding-bottom:15px;
+    margin-bottom: 15px;
+    border-bottom: solid 1px rgba(194, 194, 194, 0.173);
+}
+
+
+.table > div,
+.table > .thead > .row,
+.table > .tbody > .row{
+    width: 100%;
+    white-space: nowrap;
+    display: block;
+}
+
+
+
+.table > .thead > .row > .col,
+.table > .tbody > .row > .col{
+    display:inline-block;
+    padding: 15px;
+}
+
+.table > .thead > .row > .col{
+    color:#c2c2c2;
+    font-weight: 700;
+}
+
+#btn-create{
+    line-height: 0;
+    background-color: #3955f5e7;
+    border:none;
+    border-radius:6px;
+    padding:8px;
+    color:white;
+}
+
+#btn-create > span{
+    font-size: 18px;
+}
+
+#btn-create *{
+color:inherit;
+}
+
+.table > .tbody > .row > .col:last-child > button{
+    border-radius: 3px;
+    border:none;
+    padding:8px 17px;    
+}
+.table > .tbody > .row > .col:last-child > .btn-remove{
+    background-color: #fce2ea;
+    color:#ca2e65;
+}
+.table > .tbody > .row > .col:last-child > .btn-update{
+    background-color: #f1f0fe;
+    color:#595fd0;   
+    margin-right:8px;
+}
+
+.table > .thead > .row > .col:nth-child(1),
+.table > .tbody > .row > .col:nth-child(1){
+    width: calc(100% - (140px + 140px + 100px + 240px));
+}
+
+.table > .thead > .row > .col:nth-child(2),
+.table > .tbody > .row > .col:nth-child(2){
+    width: 140px;
+}
+
+.table > .thead > .row > .col:nth-child(3),
+.table > .tbody > .row > .col:nth-child(3){
+    width: 140px;
+}
+
+.table > .thead > .row > .col:nth-child(4),
+.table > .tbody > .row > .col:nth-child(4){
+    width: 120px;
+}
+
+.table > .thead > .row > .col:nth-child(5),
+.table > .tbody > .row > .col:nth-child(5){
+    width: 240px;
 }

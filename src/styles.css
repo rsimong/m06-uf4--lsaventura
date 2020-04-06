@@ -40,6 +40,9 @@ a:focus {
   text-decoration: none;
 }
 
+button{
+  cursor:pointer;
+}
 button:disabled {
   opacity: 0.5;
 }
