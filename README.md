@@ -81,5 +81,8 @@ La puntuación se dividirá de la siguiente forma:
   
 Los apartados marcados con un \* no se contarán a menos que se obtenga un mínimo de 5 en los demás puntos.
 
-### inspiracions pagines 
-https://dribbble.com/shots/7128143-Booking-platform-for-scuba-diving-industry
+---
+
+### Inspiracionales
+- https://dribbble.com/shots/7128143-Booking-platform-for-scuba-diving-industry
+- https://dribbble.com/shots/6098905-Trippy-Travel-App/attachments
