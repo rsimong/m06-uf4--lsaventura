@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ErrNotFoundComponent } from './layouts/errors/err-not-found/err-not-found.component';
 import { UpdateActivityComponent } from './layouts/update-activity/update-activity.component';
 import { DeleteActivityComponent } from './layouts/delete-activity/delete-activity.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DeleteActivityComponent } from './layouts/delete-activity/delete-activi
     GetListComponent,
     ErrNotFoundComponent,
     UpdateActivityComponent,
-    DeleteActivityComponent
+    DeleteActivityComponent,
+    WeatherComponent
   ],
   imports: [
     CommonModule,

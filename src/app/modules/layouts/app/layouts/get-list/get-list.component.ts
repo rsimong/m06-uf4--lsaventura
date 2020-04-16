@@ -60,5 +60,4 @@ export class GetListComponent implements OnInit {
     this.showPopupDelete.isOpen = false;
     console.log(e);
   }
-
 }
