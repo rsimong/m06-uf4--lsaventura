@@ -87,3 +87,26 @@ Los apartados marcados con un \* no se contarán a menos que se obtenga un míni
 - https://dribbble.com/shots/7128143-Booking-platform-for-scuba-diving-industry
 - https://dribbble.com/shots/6098905-Trippy-Travel-App/attachments
 - https://dribbble.com/shots/9759776-Traveling-App
+
+---
+
+### TODO List
+
+- Puntuación compartida:
+  - ~~(``1p``) Implementación de la BBDD Firestore en la aplicación.~~
+  - ~~(``0,5p``) \*Uso de Git.~~
+  - (``0,5p``) \*Estilos bien definidos.
+  - ~~(``0,5p``) \*Login con Firebase.~~
+  - ~~(``0,5p``) \*Subir la aplicación al hosting de Firebase.~~
+- Puntuación del desarrollador 1:
+  - ~~(``2,5p``) Creación y listado de actividades.~~
+  - ~~(``1p``) Login, más el guard CanActivate, el módulo de login y sus rutas.~~
+  - ~~(``1p``) Ruta raíz, modelo de usuario.~~
+  - ~~(``1,5p``) Seguimiento semanal (``0,5`` cada seguimiento días: 21 o 23, 28 o 30, y 5 o 7).~~
+  - ~~(``1p``) \*Calidad del código y separación de código en servicios, componentes, etc.~~
+- Puntuación del desarrollador 2:
+  - ~~(``2,5p``)Actualización (más el guard CanDeactivate) y eliminación de actividades.~~
+  - ~~(``1p``) Creación del módulo de actividades y sus rutas (incluida la ruta del formulario de creación).~~
+  - ~~(``1p``) Ruta 404, modelo de actividad.~~
+  - ~~(``1,5p``) Seguimiento semanal (``0,5`` cada seguimiento días: 21 o 23, 28 o 30, y 5 o 7).~~
+  - ~~(``1p``) \*Calidad del código y separación de código en servicios, componentes, etc.~~
