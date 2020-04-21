@@ -1,13 +1,41 @@
-<ul>
-  <li *ngFor="let activity of activities">
-    {{ activity?.data?.name }}
-    <button type="button" (click)="updateDoc(activity?.id)">Update</button>
-    <button type="button" (click)="deleteDoc(activity?.id)">Delete</button>
-  </li>
-</ul>
+<div id="container">  
+  <div id="container-header">
+    <h1>Adventures</h1>
+    <button type="button" id="btn-create" (click)="createNewActivity()">
+      <span class="material-icons">add</span>
+    </button>
+  </div>
+  <div class="row" id="taula">
+    <div class="table">
+      <div class="thead">
+        <div class="row">
+          <div class="col" *ngFor="let key of ['Name', 'Site', 'Date', 'Difficulty']">
+            {{ key }}
+          </div>
+          <div class="col">Actions</div>
+        </div>
+      </div>
+      <div class="tbody">
+        <div class="row" *ngFor="let activity of activities">
+          <div class="col" *ngFor="let key of ['name', 'site', 'date', 'difficulty']">
+            <ng-container *ngIf="key=== 'date'; then dateValue; else otherValue"></ng-container>
+            <ng-template #dateValue>
+              {{ getFormatDate((activity?.data)[key],"D MMM")}}
+            </ng-template>
+            <ng-template #otherValue>
+              {{ (activity?.data)[key] }}
+            </ng-template>
+          </div>
+          <div class="col">
+            <button type="button" class="btn-update" (click)="updateDoc(activity?.id)">Update</button>
+            <button type="button" class="btn-remove" (click)="deleteDoc(activity?.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="showPopupDelete.isOpen">
+      <app-delete-activity [docId]="showPopupDelete.docId" (notifyResult)="closePopupDelete($event)"></app-delete-activity>
+    </ng-container>
+  </div>
+</div>
 
-<button type="button" (click)="createNewActivity()">Create Activity</button>
-
-<ng-container *ngIf="showPopupDelete.isOpen">
-  <app-delete-activity [docId]="showPopupDelete.docId" (notifyResult)="closePopupDelete($event)"></app-delete-activity>
-</ng-container>
