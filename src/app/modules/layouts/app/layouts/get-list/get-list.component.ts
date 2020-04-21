@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivityService } from '../../../../../shared/services/activity.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-get-list',
@@ -37,6 +38,10 @@ export class GetListComponent implements OnInit {
     })
   }
 
+  getFormatDate(data: string, outputFormat: string){
+    return moment(data, 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]').format(outputFormat);
+  }
+
   createNewActivity() {
     this.router.navigate(['/create']);
   }
@@ -55,5 +60,4 @@ export class GetListComponent implements OnInit {
     this.showPopupDelete.isOpen = false;
     console.log(e);
   }
-
 }
