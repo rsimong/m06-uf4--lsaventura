@@ -9,33 +9,34 @@ import { ReplyWeather } from '../../../../../shared/models/replyweather';
 })
 export class WeatherComponent implements OnInit {
 
-  @Input() date: {year: string|number, month: string|number, day: string|number};
+  @Input() date: string;
   weather: ReplyWeather;
-
 
   constructor(private tiempo: WeatherService) { }
 
   ngOnInit() {
-    
   }
 
-  update(tiempo: {year: string|number, month: string|number, day: string|number}){
+  update(tiempo: { year: string | number, month: string | number, day: string | number }) {
     this.tiempo.getWeather(tiempo)
-    .then((resp: ReplyWeather[]) => {
-      this.weather=resp[0];
+      .then((resp: ReplyWeather[]) => {
+        this.weather = resp[0];
 
-    }).catch((err) =>{
-      console.log(err)
-    })
+      }).catch((err) => {
+        console.log(err)
+      })
   }
 
   ngOnChanges(): void {
-    if(this.date){
-      this.update(this.date);
+    if (this.date != undefined) {
+      const arrayDate = this.date.split('-');
+      const objDate = {
+        year: arrayDate[0],
+        month: arrayDate[1],
+        day: arrayDate[2]
+      }
+      this.update(objDate);
     }
   }
-
-  
-
 
 }
