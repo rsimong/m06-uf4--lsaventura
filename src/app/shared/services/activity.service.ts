@@ -14,6 +14,10 @@ export class ActivityService {
     return this.db.collection('activities').snapshotChanges();
   }
 
+  getById(id: string): Promise<any> {
+    return this.db.collection('activities').doc(id).ref.get();
+  }
+
   create(data: any): Promise<any> {
     return this.db.collection('activities').add(data);
   }
