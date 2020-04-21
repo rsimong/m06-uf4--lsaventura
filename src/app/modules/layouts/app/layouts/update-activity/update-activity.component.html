@@ -6,16 +6,18 @@
     </label>
     <label>
       <span>Site</span>
-      <input type="text" name="name" formControlName="site" />
+      <input type="text" name="site" formControlName="site" />
     </label>
     <label>
       <span>Date</span>
-      <input type="text" name="name" formControlName="date" />
+      <input type="date" name="date" formControlName="date" />
     </label>
     <label>
       <span>Difficulty</span>
-      <input type="text" name="name" formControlName="difficulty" />
+      <input type="text" name="difficulty" formControlName="difficulty" />
     </label>
     <button type="submit">Update Activity</button>
   </form>
 </div>
+
+<a [routerLink]="[ '/', 'app', 'list' ]">Go to List</a>

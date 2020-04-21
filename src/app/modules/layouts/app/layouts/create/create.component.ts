@@ -9,8 +9,6 @@ import { ActivityService } from '../../../../../shared/services/activity.service
 })
 export class CreateComponent implements OnInit {
 
-  dateSelected: {year: string|number, month: string|number, day: string|number}=null;
-
   createForm = this.fb.group({
     name: ['', Validators.required],
     site: ['', Validators.required],
@@ -35,13 +33,10 @@ export class CreateComponent implements OnInit {
       })
   }
 
-  updateDate(){
-    const updateDate= this.createForm.value.date.split('-');
-    this.dateSelected = {
-      year: updateDate[0],
-      month: updateDate[1],
-      day: updateDate[2]
-    };    
-    console.log(this.dateSelected);
+  canDeactivate() {
+    if (this.createForm.dirty) {
+      return window.confirm('Discard changes?');
+    }
+    return true;
   }
 }

@@ -1,4 +1,4 @@
-<div id="container">  
+<div id="container">
   <div id="container-header">
     <h1>Adventures</h1>
     <button type="button" id="btn-create" (click)="createNewActivity()">
@@ -9,7 +9,7 @@
     <div class="table">
       <div class="thead">
         <div class="row">
-          <div class="col" *ngFor="let key of ['Name', 'Site', 'Date', 'Difficulty']">
+          <div class="col" *ngFor="let key of ['Name', 'Site', 'Date', 'Weather', 'Difficulty']">
             {{ key }}
           </div>
           <div class="col">Actions</div>
@@ -17,14 +17,18 @@
       </div>
       <div class="tbody">
         <div class="row" *ngFor="let activity of activities">
-          <div class="col" *ngFor="let key of ['name', 'site', 'date', 'difficulty']">
-            <ng-container *ngIf="key=== 'date'; then dateValue; else otherValue"></ng-container>
-            <ng-template #dateValue>
-              {{ getFormatDate((activity?.data)[key],"D MMM")}}
-            </ng-template>
-            <ng-template #otherValue>
-              {{ (activity?.data)[key] }}
-            </ng-template>
+          <div class="col" *ngFor="let key of ['name', 'site', 'date', 'weather', 'difficulty']">
+            <ng-container [ngSwitch]="key">
+              <ng-container *ngSwitchCase="'date'">
+                {{ getFormatDate((activity?.data)[key],"D MMM") }}
+              </ng-container>
+              <ng-container *ngSwitchCase="'weather'">
+                <app-weather [date]="(activity?.data)['date']"></app-weather>
+              </ng-container>
+              <ng-container *ngSwitchDefault>
+                {{ (activity?.data)[key] }}
+              </ng-container>
+            </ng-container>
           </div>
           <div class="col">
             <button type="button" class="btn-update" (click)="updateDoc(activity?.id)">Update</button>
@@ -34,8 +38,8 @@
       </div>
     </div>
     <ng-container *ngIf="showPopupDelete.isOpen">
-      <app-delete-activity [docId]="showPopupDelete.docId" (notifyResult)="closePopupDelete($event)"></app-delete-activity>
+      <app-delete-activity [docId]="showPopupDelete.docId" (notifyResult)="closePopupDelete($event)">
+      </app-delete-activity>
     </ng-container>
   </div>
 </div>
-
