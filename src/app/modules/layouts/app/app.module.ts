@@ -9,6 +9,7 @@ import { ErrNotFoundComponent } from './layouts/errors/err-not-found/err-not-fou
 import { UpdateActivityComponent } from './layouts/update-activity/update-activity.component';
 import { DeleteActivityComponent } from './layouts/delete-activity/delete-activity.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { CanDeactivateGuard } from 'src/app/core/guards/can-deactivate.guard';
 
 
 @NgModule({
@@ -25,6 +26,9 @@ import { WeatherComponent } from './components/weather/weather.component';
     CommonModule,
     AppRoutingModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    CanDeactivateGuard
   ]
 })
 export class AppModule { }

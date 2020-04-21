@@ -26,7 +26,15 @@ export class UpdateActivityComponent implements OnInit {
 
   ngOnInit() {
     this.docId = this.route.snapshot.paramMap.get("id");
-    console.log(this.docId);
+    this.db.getById(this.docId).then((item) => {
+      const data = item.data();
+      this.updateForm.setValue({
+        name: data.name,
+        site: data.site,
+        date: data.date,
+        difficulty: data.difficulty
+      });
+    });
   }
 
   onSubmit() {
@@ -36,6 +44,13 @@ export class UpdateActivityComponent implements OnInit {
     this.db.update(this.docId, this.updateForm.value)
       .then((value) => console.log(value))
       .catch((error) => console.warn(error));
+  }
+
+  canDeactivate() {
+    if (this.updateForm.dirty) {
+      return window.confirm('Discard changes?');
+    }
+    return true;
   }
 
 }
