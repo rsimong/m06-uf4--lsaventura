@@ -11,6 +11,8 @@ import * as moment from 'moment';
 export class GetListComponent implements OnInit {
 
   activities = [];
+
+  //per fefecte es null i false i a la hora que li donem al qualsevl boto del front s'activara el popup de verificacio.
   showPopupDelete: { isOpen: boolean, docId: string } = {
     isOpen: false,
     docId: null
@@ -26,12 +28,13 @@ export class GetListComponent implements OnInit {
       //then
       this.activities = [];
       value.forEach((data: any) => {
+        //fem un push a activites on guardarem la id, data.
         this.activities.push({
           id: data.payload.doc.id,
-          data: data.payload.doc.data()
+          data: data.payload.doc.data() // funcio interna que nome et torna les dades que tu vas omplir a la basse de dades
         });
       });
-      console.log(this.activities);
+
     }, err => {
       //catch
       console.warn("error", err);
@@ -55,9 +58,9 @@ export class GetListComponent implements OnInit {
     this.showPopupDelete.isOpen = true;
   }
 
+  //funcio que tanca el popup
   closePopupDelete(e) {
     this.showPopupDelete.docId = null;
     this.showPopupDelete.isOpen = false;
-    console.log(e);
   }
 }

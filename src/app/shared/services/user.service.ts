@@ -28,9 +28,7 @@ export class UserService {
         console.log("error:" + err);
       });
   }
-
   logout() {
     this.afAuth.auth.signOut(); //metode per defecte que porta fireBase per fer el logaut
   }
-
 }
