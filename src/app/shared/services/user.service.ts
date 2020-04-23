@@ -33,9 +33,4 @@ export class UserService {
     this.afAuth.auth.signOut(); //metode per defecte que porta fireBase per fer el logaut
   }
 
-  create(name: string, site: string, date: Date, difficulty: string ){
-
-    
-
-  }
 }
