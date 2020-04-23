@@ -12,7 +12,7 @@ export class UserService {
   constructor(
     private afAuth: AngularFireAuth,
     private route: Router
-    ) {
+  ) {
     this.user = afAuth.authState;
   }
 
@@ -21,7 +21,7 @@ export class UserService {
       .signInWithEmailAndPassword(email, password)
       .then((response) => {
         console.log(response);
-        localStorage.setItem("user",JSON.stringify(response.user.providerData))
+        localStorage.setItem("user", JSON.stringify(response.user.providerData))
         this.route.navigate(["app"]);
       })
       .catch((err) => {
@@ -33,9 +33,4 @@ export class UserService {
     this.afAuth.auth.signOut();
   }
 
-  create(name: string, site: string, date: Date, difficulty: string ){
-
-    
-
-  }
 }
