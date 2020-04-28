@@ -1,0 +1,42 @@
+#error--page-not-found {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url('../../../../../../../assets/img/tenor.gif');
+  background-size: cover;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+}
+
+#error--page-not-found>#e-pnf--box {
+  width: auto;
+  left: 0%;
+  bottom: 0%;
+  margin: 5%;
+  text-align: left;
+  transform: translate(0%, 0%);
+  position: absolute;
+  display: inline-block;
+}
+
+#error--page-not-found>#e-pnf--box>h1 {
+  font-size: 220px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: inherit;
+  letter-spacing: -6px;
+  text-shadow: 10px 10px 0px rgba(0, 0, 0, 0.32);
+  line-height: 1;
+}
+
+#error--page-not-found>#e-pnf--box>h2 {
+  font-size: 58px;
+  font-weight: 900;
+  text-align: inherit;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 10px 10px 0px rgba(0, 0, 0, 0.32);
+  white-space: nowrap;
+  line-height: 1;
+}
