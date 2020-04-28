@@ -41,16 +41,16 @@ export class GetListComponent implements OnInit {
     })
   }
 
-  getFormatDate(data: string, outputFormat: string){
+  getFormatDate(data: string, outputFormat: string) {
     return moment(data, 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]').format(outputFormat);
   }
 
   createNewActivity() {
-    this.router.navigate(['/create']);
+    this.router.navigate(['/list/create']);
   }
 
   updateDoc(docId: string) {
-    this.router.navigate(['/update', docId]);
+    this.router.navigate(['/list/update', docId]);
   }
 
   deleteDoc(docId: string) {
