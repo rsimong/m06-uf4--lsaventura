@@ -14,19 +14,6 @@ export class WeatherComponent implements OnInit {
 
   constructor(private tiempo: WeatherService) { }
 
-  ngOnInit() {
-  }
-
-  update(tiempo: { year: string | number, month: string | number, day: string | number }) {
-    this.tiempo.getWeather(tiempo)
-      .then((resp: ReplyWeather[]) => {
-        this.weather = resp[0];
-
-      }).catch((err) => {
-        console.log(err)
-      })
-  }
-
   ngOnChanges(): void {
     if (this.date != undefined) {
       const arrayDate = this.date.split('-');
@@ -37,6 +24,19 @@ export class WeatherComponent implements OnInit {
       }
       this.update(objDate);
     }
+  }
+
+  ngOnInit() {
+  }
+
+  update(tiempo: { year: string | number, month: string | number, day: string | number }) {
+    if (!tiempo.year || !tiempo.month || !tiempo.day) return;
+    this.tiempo.getWeather(tiempo)
+      .then((resp: ReplyWeather[]) => {
+        this.weather = resp[0];
+      }).catch((err) => {
+        console.log(err)
+      })
   }
 
 }
