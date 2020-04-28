@@ -12,4 +12,17 @@ export class ErrNotFoundComponent implements OnInit {
   ngOnInit() {
   }
 
+  setRandomBackground(): string {
+    const imagesAvailable = 9;
+    const generateNumRandom = (loops) => {
+      let num = 1;
+      for (let i = 0; i < loops; i++) {
+        num = Math.floor(Math.random() * imagesAvailable) + 1;
+      }
+      return num;
+    };
+    const imgNum = generateNumRandom(3);
+    return `url('../../../../../../../assets/img/tenor_${imgNum}.gif')`;
+  }
+
 }
