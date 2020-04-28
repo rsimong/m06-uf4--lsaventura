@@ -3,9 +3,8 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-image: url('../../../../../../../assets/img/tenor.gif');
   background-size: cover;
-  background-position: 50% 100%;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   position: fixed;
 }
