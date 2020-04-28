@@ -8,34 +8,27 @@ import { Router } from '@angular/router';
   providedIn: "root",
 })
 export class UserService {
-  user: Observable<firebase.User>;
+
+  user: Observable<firebase.User>; // Guarda datos de la basse de dades del usuari.
   constructor(
     private afAuth: AngularFireAuth,
     private route: Router
     ) {
-    this.user = afAuth.authState;
+    this.user = afAuth.authState; //Guarda esta usuari
   }
 
   login(email: string, password: string) {
     this.afAuth.auth
-      .signInWithEmailAndPassword(email, password)
+      .signInWithEmailAndPassword(email, password) //metdode per defecte que porta el packet de fireBase per fer el logueig
       .then((response) => {
-        console.log(response);
-        localStorage.setItem("user",JSON.stringify(response.user.providerData))
-        this.route.navigate(["app"]);
+        localStorage.setItem("user",JSON.stringify(response.user.providerData)) //guardar en localStorage el token que es diu user.
+        this.route.navigate(["app"]); //redirigeix a app que es quan estas logueijat.
       })
       .catch((err) => {
         console.log("error:" + err);
       });
   }
-
   logout() {
-    this.afAuth.auth.signOut();
-  }
-
-  create(name: string, site: string, date: Date, difficulty: string ){
-
-    
-
+    this.afAuth.auth.signOut(); //metode per defecte que porta fireBase per fer el logaut
   }
 }
