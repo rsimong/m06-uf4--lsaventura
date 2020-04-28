@@ -13,7 +13,7 @@ export class ErrNotFoundComponent implements OnInit {
   }
 
   setRandomBackground(): string {
-    const imagesAvailable = 9;
+    const imagesAvailable = 10;
     const generateNumRandom = (loops) => {
       let num = 1;
       for (let i = 0; i < loops; i++) {
