@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivityService } from 'src/app/shared/services/activity.service';
@@ -21,7 +22,8 @@ export class UpdateActivityComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private db: ActivityService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -37,13 +39,24 @@ export class UpdateActivityComponent implements OnInit {
     });
   }
 
+  stopPropagation(e) {
+    e.stopPropagation();
+  }
+
   onSubmit() {
     if (!this.updateForm.valid || !this.docId)
       return;
 
     this.db.update(this.docId, this.updateForm.value)
-      .then((value) => console.log(value))
+      .then((value) => {
+        this.updateForm.reset();
+        this.closeModal();
+      })
       .catch((error) => console.warn(error));
+  }
+
+  closeModal() {
+    this.router.navigate(['/list']);
   }
 
   canDeactivate() {
