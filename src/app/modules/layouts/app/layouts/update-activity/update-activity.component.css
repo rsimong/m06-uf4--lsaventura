@@ -1,0 +1,115 @@
+#modal--update-activity {
+  width: 100vw;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 9;
+}
+
+#form {
+  width: 460px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  border-radius: 3px;
+  /* box-shadow: 0 10px 20px -4px rgba(0, 0, 0, 0.2); */
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+}
+
+#form>#f--header,
+#form>#f--header>h1,
+#form>#f--header>p,
+#form>#f--main,
+#form>#f--main>form,
+#form>#f--main>form>label,
+#form>#f--main>form>label>span,
+#form>#f--main>form>label>input {
+  width: 100%;
+  display: block;
+}
+
+#form>#f--header {
+  padding-bottom: 20px;
+  margin-bottom: 5px;
+}
+
+#form>#f--header>h1 {
+  margin-bottom: 10px;
+  font-size: 42px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1;
+  display: block;
+}
+
+#form>#f--header>h1>span {
+  font: inherit;
+  color: inherit;
+  line-height: inherit;
+  display: inline;
+}
+
+#form>#f--header>p {
+  line-height: 1.2;
+  color: #999;
+}
+
+#form>#f--main>form>label {
+  padding: 10px;
+  border: 1px solid #d8d8d8;
+}
+
+#form>#f--main>form>label:not(:first-of-type) {
+  border-top: none;
+}
+
+#form>#f--main>form>label:first-of-type {
+  border-radius: 3px 3px 0 0;
+}
+
+#form>#f--main>form>label:last-of-type {
+  border-radius: 0 0 3px 3px;
+}
+
+#form>#f--main>form>label>span {
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
+}
+
+#form>#f--main>form>label>input {
+  padding: 4px 0;
+  border: none;
+  background-color: transparent;
+}
+
+#form>#f--main>form>label:nth-child(3)>#weather-preview {
+  width: 36px;
+  height: 39px;
+  bottom: 0%;
+  right: 0%;
+  margin: 10px;
+  transform: translate(0%, 0%);
+  background-color: white;
+  position: absolute;
+}
+
+#form>#f--main>form>button {
+  padding: 15px 30px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #000;
+}
+
+#form>#f--main>form>button:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+}
