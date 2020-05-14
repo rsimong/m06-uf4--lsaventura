@@ -89,7 +89,7 @@
 
 .table>.thead>.row>.col:nth-child(1),
 .table>.tbody>.row>.col:nth-child(1) {
-  width: calc(100% - (140px + 140px + 100px + 240px));
+  width: calc(100% - (140px + 140px + 120px + 120px + 240px));
 }
 
 .table>.thead>.row>.col:nth-child(2),
@@ -109,5 +109,14 @@
 
 .table>.thead>.row>.col:nth-child(5),
 .table>.tbody>.row>.col:nth-child(5) {
+  width: 120px;
+}
+
+.table>.thead>.row>.col:nth-child(6),
+.table>.tbody>.row>.col:nth-child(6) {
   width: 240px;
+}
+
+#action > button{
+  margin: 5px;
 }

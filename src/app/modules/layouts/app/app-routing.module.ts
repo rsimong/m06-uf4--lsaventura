@@ -26,6 +26,10 @@ const routes: Routes = [
       }]
   },
   {
+    path: "",
+    redirectTo: "list"
+  },
+  {
     path: '**',
     component: ErrNotFoundComponent
   }
